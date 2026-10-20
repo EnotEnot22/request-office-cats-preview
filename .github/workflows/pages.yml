@@ -28,6 +28,9 @@ jobs:
           echo '0a954eda1f72db0f062377ebd9fadb39fdb6eacab5225f44d1adc4c1f422256b  /tmp/request-cats-site.tar.gz' | sha256sum -c -
           mkdir -p public
           tar -xzf /tmp/request-cats-site.tar.gz -C public
+          cat request-cats-update-20261020.chunk-* > /tmp/request-cats-update-20261020.tar.gz
+          echo 'dec08e93b6ddcb69ac008e271f27c7e7eef6f828089eafb6cfb786909a34f69f  /tmp/request-cats-update-20261020.tar.gz' | sha256sum -c -
+          tar -xzf /tmp/request-cats-update-20261020.tar.gz -C public
           touch public/.nojekyll
           test -f public/index.html
       - uses: actions/configure-pages@v5
